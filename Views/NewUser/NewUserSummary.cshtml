@@ -8,10 +8,12 @@
 <h1>Welcome! Please Review & Confirm:</h1>
 @if (Model != null)
 {
- 
-            <p> @Model.UserName | @Model.Email | @Model.Password</p>
 
-      
+    <h3>>Username: @Model.UserName </h3>
+    <h3>>Email: @Model.Email </h3>
+    <h3>>Password: @Model.Password </h3>
+
+
 }
 <a href="../Home/Index" class="btn btn-primary">Confirm</a>
 

@@ -388,3 +388,4 @@ C:\Users\micha\OneDrive\Desktop\CoffeeShopLab\obj\Debug\netcoreapp3.0\CoffeeShop
 C:\Users\micha\OneDrive\Desktop\CoffeeShopLab\obj\Debug\netcoreapp3.0\CoffeeShopLab.pdb
 C:\Users\micha\OneDrive\Desktop\CoffeeShopLab\obj\Debug\netcoreapp3.0\Razor\Views\Home\Order.cshtml.g.cs
 C:\Users\micha\OneDrive\Desktop\CoffeeShopLab\obj\Debug\netcoreapp3.0\Razor\Views\Home\SignIn.cshtml.g.cs
+C:\Users\micha\OneDrive\Desktop\CoffeeShopLab\obj\Debug\netcoreapp3.0\Razor\Views\NewUser\LogOut.cshtml.g.cs

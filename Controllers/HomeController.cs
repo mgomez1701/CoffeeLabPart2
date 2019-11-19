@@ -41,6 +41,7 @@ namespace CoffeeShopLab.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+       
 
         public IActionResult SignIn(NewUser user)// string username, string password
         {
@@ -48,12 +49,26 @@ namespace CoffeeShopLab.Controllers
             string signInUserJson = HttpContext.Session.GetString("LoginInSession");
             //var sesssJson = HttpContext.Session.GetString("UserListSession");
             //List<NewUser> list = JsonConvert.Deserialize<List<NewUser>(sesssJson);
-            NewUser loginUser = JsonConvert.DeserializeObject<NewUser>(signInUserJson);
-
-            foreach()
+            if (signInUserJson != null)
             {
+                List<NewUser> loginUser = JsonConvert.DeserializeObject<List<NewUser>>(signInUserJson);
 
+
+
+
+                foreach (NewUser login in loginUser)
+                {
+                    if (login.UserName != null)
+                    {
+                        if (login.Password != null)
+                        {
+                            return View(login);
+                        }
+                    }
+                }
             }
+
+            
 
             //compare the username AND password FOREACH USER IN the List
 
@@ -68,5 +83,7 @@ namespace CoffeeShopLab.Controllers
         {
             return View();
         }
+       
+
     }
 }

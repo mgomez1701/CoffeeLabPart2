@@ -67,6 +67,11 @@ namespace CoffeeShopLab.Controllers
             }
 
         }
+        public IActionResult LogOut()
+        {
+            savedUser.Clear();
+            return View();
+        }
 
     }
 }
