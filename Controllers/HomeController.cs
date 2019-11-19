@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CoffeeShopLab.Models;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace CoffeeShopLab.Controllers
 {
@@ -20,6 +22,12 @@ namespace CoffeeShopLab.Controllers
 
         public IActionResult Index()
         {
+            string registeredUserJson = HttpContext.Session.GetString("UserSignedInSession");
+            if (registeredUserJson != null)
+            {
+                NewUser signedInUser = JsonConvert.DeserializeObject<NewUser>(registeredUserJson);
+                return View(signedInUser);
+            }
             return View();
         }
 
@@ -32,6 +40,28 @@ namespace CoffeeShopLab.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult SignIn(NewUser user)// string username, string password
+        {
+            // Get the List of the USERS from the SESSION;
+            string signInUserJson = HttpContext.Session.GetString("LoginInSession");
+            //var sesssJson = HttpContext.Session.GetString("UserListSession");
+            //List<NewUser> list = JsonConvert.Deserialize<List<NewUser>(sesssJson);
+            NewUser loginUser = JsonConvert.DeserializeObject<NewUser>(signInUserJson);
+
+            foreach()
+            {
+
+            }
+
+            //compare the username AND password FOREACH USER IN the List
+
+            // if(User exists in list)
+            // Create a new SESSION for the Single USER
+            //HttpContext.Session.SetString("UserSignedInSession", JsonConvert.SerializeObject(FOUNDUSER));
+
+            return View();
         }
 
         public IActionResult Order()

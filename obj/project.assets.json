@@ -8047,11 +8047,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CoffeeShop-master\\CoffeeShopLab\\CoffeeShopLab.csproj",
+      "projectUniqueName": "C:\\Users\\micha\\OneDrive\\Desktop\\CoffeeShopLab\\CoffeeShopLab.csproj",
       "projectName": "CoffeeShopLab",
-      "projectPath": "D:\\CoffeeShop-master\\CoffeeShopLab\\CoffeeShopLab.csproj",
+      "projectPath": "C:\\Users\\micha\\OneDrive\\Desktop\\CoffeeShopLab\\CoffeeShopLab.csproj",
       "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-      "outputPath": "D:\\CoffeeShop-master\\CoffeeShopLab\\obj\\",
+      "outputPath": "C:\\Users\\micha\\OneDrive\\Desktop\\CoffeeShopLab\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

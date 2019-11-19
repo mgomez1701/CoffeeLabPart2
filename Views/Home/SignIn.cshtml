@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "SignIn";
+}
+@model NewUser
+
+<h1>SignIn</h1>
+
+<form action="../Home/SignIn" method="get">
+    <label>Username</label>
+    <input type="text" name="UserName" placeholder="User Name" />
+    <label>Password:</label>
+    <input type="password" name="Password" placeholder="Password" />
+
+    <input type="submit" class ="btn btn-primary" value="Sign In" />
+    @if (Model != null)
+    {
+        @Html.ValidationSummary()
+    }
+</form>
+
+
+

@@ -2,18 +2,23 @@
 @{
     ViewData["Title"] = "RegisterUser";
 }
+@model NewUser
 
 <h1>Create Account!</h1>
 
-<form action="../NewUser/NewUserSummary" method="post">
+<form action="../NewUser/SaveUser" method="post">
     <label>Create a Username</label>
     <input type="text" name="UserName" placeholder="User Name" />
     <label>Please enter your E-mail:</label>
     <input type="email" name="Email" placeholder="Email" />
     <label>Create a Password:</label>
-    <input type="text" name="Password" placeholder="Password" />
+    <input type="password" name="Password" placeholder="Password" />
 
-    <input type="submit" class ="btn-outline-primary" value="Create Account" />
+    <input type="submit" class ="btn btn-primary" value="Create Account" />
+   @if (Model != null)
+   {
     @Html.ValidationSummary()
+   }
 </form>
 
+    

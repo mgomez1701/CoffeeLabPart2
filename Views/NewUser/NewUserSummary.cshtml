@@ -3,11 +3,20 @@
     ViewData["Title"] = "NewUserSummary";
 }
 
-@model CoffeeShopLab.Models.NewUser
+@model NewUser
 
 <h1>Welcome! Please Review & Confirm:</h1>
+@if (Model != null)
+{
+ 
+            <p> @Model.UserName | @Model.Email | @Model.Password</p>
 
-<h3>Username:</h3> <p>@Model.UserName</p>
-<h3>Email:</h3> <p>@Model.Email</p>
-<h3>Password:</h3> <p>@Model.Password</p>
+      
+}
+<a href="../Home/Index" class="btn btn-primary">Confirm</a>
 
+
+
+@*<form asp-controller="NewUser" asp-action="SaveToList" method="post">
+        <button type="submit"> Confirm</button>
+    </form>*@

@@ -23,6 +23,20 @@ namespace CoffeeShopLab
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(
+                options =>
+                {
+                    //set a short timeout for easy testing//                 
+                    options.Cookie.HttpOnly = true;
+                    //make the session cookei essential
+                    options.Cookie.IsEssential = true;
+                    // need to add app.UseSession(); in the configure below after completing this
+
+                }
+                );
             services.AddControllersWithViews();
         }
 
@@ -43,6 +57,7 @@ namespace CoffeeShopLab
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 
