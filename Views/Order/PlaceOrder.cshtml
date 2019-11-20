@@ -3,8 +3,29 @@
     ViewData["Title"] = "PlaceOrder";
 }
 
+@model List<CoffeeOptions>
+<h1>Your Cart</h1>
+@if (Model != null)
+{
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
 
-<h1>PlaceOrder</h1>
+        </tr>
+        @foreach (CoffeeOptions option in Model)
+        {
+            <tr>
+                <td>@option.Name </td>
+                <td>@option.Price </td>
+
+
+                @*<td><a href="../MovieDb/AddToFavorites?id=@movie.Id" class="btn btn-primary">Add to Favorites!</a> </td>*@
+
+            </tr>
+        }
+    </table>
+}
 
 <form asp-controller="Order" asp-action="PlaceOrder" method="post">
     <input type="radio" name="name" value="" />

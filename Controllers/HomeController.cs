@@ -53,37 +53,36 @@ namespace CoffeeShopLab.Controllers
             {
                 List<NewUser> loginUser = JsonConvert.DeserializeObject<List<NewUser>>(signInUserJson);
 
+                //compare the username AND password FOREACH USER IN the List
 
-
+                // if(User exists in list)
 
                 foreach (NewUser login in loginUser)
                 {
-                    if (login.UserName != null)
+                    if (login.UserName == login.UserName)
                     {
-                        if (login.Password != null)
+                        if (login.Password == login.Password)
                         {
-                            return View(login);
+                            return RedirectToAction("Index", "Home");
                         }
                     }
                 }
+
             }
-
-            
-
-            //compare the username AND password FOREACH USER IN the List
-
-            // if(User exists in list)
+            return View();
             // Create a new SESSION for the Single USER
             //HttpContext.Session.SetString("UserSignedInSession", JsonConvert.SerializeObject(FOUNDUSER));
 
-            return View();
+           
         }
 
-        public IActionResult Order()
+        public IActionResult ViewProducts()
         {
-            return View();
+            var menuList = CoffeeOptions.coffeeOptions.ToList();
+            return View(menuList);
         }
-       
+
+    
 
     }
 }

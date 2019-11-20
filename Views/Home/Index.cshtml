@@ -4,7 +4,7 @@
 
 @model NewUser
 
-@if(Model != null)
+@if (Model != null)
 {
     <h1>@Model.UserName</h1>
 }
@@ -26,9 +26,12 @@
 
 
     </div>
-</div>
 
-<button type="submit"> Order </button>
+</div>
+<a href="../Home/ViewProducts" class="btn btn-primary">Order</a>
+
+
+
 
 <style>
 
@@ -60,6 +63,9 @@
 
     button {
         margin-top: 4px;
+    }
+    a{
+       margin-top:8px;
     }
 </style>
 

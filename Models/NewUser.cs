@@ -18,5 +18,7 @@ namespace CoffeeShopLab.Models
         [StringLength(45, MinimumLength = 8, ErrorMessage = "Password requires min 8 characters")]
         public string Password { get; set; }
 
+
+
     }
 }
